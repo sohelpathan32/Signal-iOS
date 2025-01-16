@@ -59,7 +59,8 @@ extension CallHTTPClient: HTTPDelegate {
                 if error.isNetworkFailureOrTimeout {
                     Logger.warn("Peek client HTTP request had network error: \(error)")
                 } else {
-                    owsFailDebug("Peek client HTTP request failed \(error)")
+                    //owsFailDebug("Peek client HTTP request failed \(error)")
+                    Logger.warn("Peek client HTTP request failed \(error)")
                 }
                 self.ringRtcHttpClient.httpRequestFailed(requestId: requestId)
             }

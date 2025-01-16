@@ -240,7 +240,7 @@ public class RemoteConfig {
     }
 
     public var cdsiLookupWithLibsignal: Bool {
-        return isEnabled(.cdsiLookupWithLibsignal, defaultValue: true)
+        return isEnabled(.cdsiLookupWithLibsignal, defaultValue: false)
     }
 
     public var messageQueueTime: TimeInterval {

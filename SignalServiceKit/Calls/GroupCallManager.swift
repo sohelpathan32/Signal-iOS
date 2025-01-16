@@ -151,7 +151,8 @@ public class GroupCallManager {
                 // with the staging credentials is expected to fail.
                 self.logger.warn("Expected failure to fetch PeekInfo for \(thread.uniqueId): \(error)")
             } else {
-                owsFailDebug("Failed to fetch PeekInfo for \(thread.uniqueId): \(error)")
+                //owsFailDebug("Failed to fetch PeekInfo for \(thread.uniqueId): \(error)")
+                Logger.warn("Failed to fetch PeekInfo for \(thread.uniqueId): \(error)")
             }
         }
     }

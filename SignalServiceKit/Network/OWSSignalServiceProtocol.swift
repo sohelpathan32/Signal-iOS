@@ -34,6 +34,7 @@ public enum SignalServiceType {
     case cdn0
     case cdn2
     case cdn3
+    case cdn4
     case updates
     case updates2
     case contactDiscoveryV2
@@ -47,6 +48,8 @@ public enum SignalServiceType {
             return cdn2
         case 3:
             return cdn3
+        case 4:
+            return cdn4
         default:
             owsFailDebug("Unrecognized CDN number configuration requested: \(cdnNumber)")
             return cdn2
@@ -161,6 +164,15 @@ extension SignalServiceType {
                 shouldHandleRemoteDeprecation: false,
                 type: self
             )
+        case .cdn4:
+                    return SignalServiceInfo(
+                        baseUrl: URL(string: TSConstants.textSecureCDN4ServerURL)!,
+                        censorshipCircumventionSupported: true,
+                        censorshipCircumventionPathPrefix: TSConstants.cdn4CensorshipPrefix,
+                        shouldUseSignalCertificate: true,
+                        shouldHandleRemoteDeprecation: false,
+                        type: self
+                    )
         case .updates:
             return SignalServiceInfo(
                 baseUrl: URL(string: TSConstants.updatesURL)!,

@@ -75,6 +75,8 @@ public class BadgeAssets: NSObject {
                 state = .unavailable
                 return false
             }
+            state = .fetching
+            return false
 
             // If we have all our assets on disk, we're good to go
             let allAssetUrls = [fileUrlForSpritesheet()] + Variant.allCases.map { fileUrlForVariant($0) }
