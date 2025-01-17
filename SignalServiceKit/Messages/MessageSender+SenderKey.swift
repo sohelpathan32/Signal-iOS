@@ -532,7 +532,7 @@ extension MessageSender {
                 let responseData = httpError.httpResponseData
                 switch statusCode {
                 case 401:
-                    owsFailDebug("Invalid composite authorization header for sender key send request. Falling back to fanout")
+                    Logger.debug("Invalid composite authorization header for sender key send request. Falling back to fanout")
                     throw SenderKeyError.invalidAuthHeader
                 case 404:
                     Logger.warn("One of the recipients could not match an account. We don't know which. Falling back to fanout.")

@@ -381,7 +381,8 @@ extension GroupV2UpdatesImpl: GroupV2Updates {
                     GroupsV2Error.missingGroupChangeProtos:
                     Logger.warn("Group update failed: \(error)")
                 default:
-                    owsFailDebug("Group update failed: \(error)")
+                    //owsFailDebug("Group update failed: \(error)")
+                    Logger.debug("Group update failed: \(error)")
                 }
             }
             throw error

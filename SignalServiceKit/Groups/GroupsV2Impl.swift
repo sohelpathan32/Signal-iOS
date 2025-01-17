@@ -1028,7 +1028,8 @@ public class GroupsV2Impl: GroupsV2 {
             case 400:
                 switch behavior400 {
                 case .fail:
-                    owsFailDebug("Unexpected 400.")
+                    //owsFailDebug("Unexpected 400.")
+                    Logger.debug("Unexpected 400.")
                 case .reportForRecovery:
                     throw GroupsV2Error.serviceRequestHitRecoverable400
                 }
