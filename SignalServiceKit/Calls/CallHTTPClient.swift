@@ -27,7 +27,7 @@ extension CallHTTPClient: HTTPDelegate {
         AssertIsOnMainThread()
 
         let session = OWSURLSession(
-            securityPolicy: OWSURLSession.signalServiceSecurityPolicy,
+            securityPolicy: OWSURLSession.defaultSecurityPolicy,
             configuration: OWSURLSession.defaultConfigurationWithoutCaching,
             canUseSignalProxy: true
         )
