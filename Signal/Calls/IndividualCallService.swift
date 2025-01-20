@@ -433,7 +433,7 @@ final class IndividualCallService: CallServiceStateObserver {
                     }
                 }
 
-                let useTurnOnly = isUnknownCaller || self.preferences.doCallsHideIPAddress
+                let useTurnOnly = false//isUnknownCaller || self.preferences.doCallsHideIPAddress
 
                 let useLowData = self.callService.shouldUseLowDataWithSneakyTransaction(for: NetworkRoute(localAdapterType: .unknown))
                 Logger.info("Configuring call for \(useLowData ? "low" : "standard") data")
@@ -441,7 +441,7 @@ final class IndividualCallService: CallServiceStateObserver {
                 // Tell the Call Manager to proceed with its active call.
                 try self.callManager.proceed(callId: callId, iceServers: iceServers, hideIp: useTurnOnly, videoCaptureController: call.videoCaptureController, dataMode: useLowData ? .low : .normal, audioLevelsIntervalMillis: nil)
             } catch {
-                owsFailDebug("\(error)")
+                //owsFailDebug("\(error)")
                 guard call === self.callServiceState.currentCall else {
                     return
                 }
