@@ -21,7 +21,7 @@ public class NotificationActionHandler {
         }.done {
             completionHandler()
         }.catch { error in
-            owsFailDebug("error: \(error)")
+            //owsFailDebug("error: \(error)")
             completionHandler()
         }
     }

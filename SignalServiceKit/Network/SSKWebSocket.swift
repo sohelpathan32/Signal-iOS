@@ -397,6 +397,7 @@ public class SSKWebSocketNative: SSKWebSocket {
 
         callbackScheduler.async {
             self.delegate?.websocketDidDisconnectOrFail(socket: self, error: error)
+            print("\nSocket Disconnect log:\(error)")
         }
     }
 }

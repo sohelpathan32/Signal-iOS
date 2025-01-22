@@ -624,7 +624,7 @@ extension ConversationHeaderDelegate {
             if currentCall.mode.matches(callTarget) {
                 AppEnvironment.shared.windowManagerRef.returnToCallView()
             } else {
-                owsFailDebug("Tried to start call while call was ongoing")
+                //owsFailDebug("Tried to start call while call was ongoing")
             }
             return
         }

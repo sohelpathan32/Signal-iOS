@@ -47,7 +47,7 @@ public extension SSKReachabilityManager {
 public class SSKReachabilityManagerImpl: NSObject, SSKReachabilityManager {
 
     private let backgroundSession = OWSURLSession(
-        securityPolicy: OWSURLSession.signalServiceSecurityPolicy,
+        securityPolicy: OWSURLSession.defaultSecurityPolicy,
         configuration: .background(withIdentifier: "SSKReachabilityManagerImpl"),
         canUseSignalProxy: false
     )
